@@ -1,4 +1,8 @@
 <?php
+
+spl_autoload_register(function ($class) {
+    include 'class/' . $class . '.php';
+});
 class Aigle extends Animaux
 {
     public function __construct($species_name, $weight, $size, $age, $type, $sexe)

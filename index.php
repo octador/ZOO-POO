@@ -1,36 +1,91 @@
+<?php
+spl_autoload_register(function ($class) {
+    include 'class/' . $class . '.php';
+});
+
+
+var_dump($_POST);
+
+// $newZoo = new Zoo();
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
     <title>ZOO</title>
 </head>
 
 <body>
-    <form action="" method="post">
-        <label for="pet-select">Choose a pet:</label>
+    <!-- created zoo -->
+    <!-- created employ -->
+    <div class="d-flex flex-column">
+        <div>
+            <h3> Crée votre ZOO :</h3>
+            <form action="" method="post">
+                <div>
+                    <label for="name-zoo"> Quel nom veux tu donner a ton zoo : </label>
+                    <input type="text" name="name-zoo" required>
+                </div>
 
-        <select name="pets" id="pet-select">
-            <option value="">--choisir un animal--</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
-        </select>
-        <select name="pets" id="pet-select">
-            <option value="">--choisir un enclos--</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
-        </select>
+                <div>
+                    <label for="name"> Donner un nom a votre employer :</label>
+                    <input type="text" name="name-employ" required>
+                </div>
 
-    </form>
+                <div>
+                    <label for="age"> Donner un age a votre employer :</label>
+                    <input type="date" name="age" required>
+                </div>
+                <div>
+                    <select name="sexe-employ" id="sexe-employ" required>
+                        <option value="femme">Femme</option>
+                        <option value="homme">Homme</option>
+                    </select>
+                </div>
+                <button type="submit">Valider</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>
+
+<!-- <div>
+    <form action="" method="post">
+        <label for="pet-select">choisir un animal : </label>
+
+        <select name="pets" id="pet-select">
+            <option value="">--Please choose an option--</option>
+            <option value="tigre">Tigre</option>
+            <option value="ours">Ours</option>
+            <option value="poisson">poisson</option>
+            <option value="aigle">Aigle</option>
+        </select>
+</div> -->
+
+
+
+
+
+
+<!-- <label for="enclos-select"> Ajouter un enclos</label>
+            <select name="enclos" id="enclos-select">
+                <option value="">--Please choose an option--</option>
+                <option value="1"> Ajouter enclos 1 </option>
+                <option value="1"> Ajouter enclos 2 </option>
+                <option value="1"> Ajouter enclos 3 </option>
+                <option value="1"> Ajouter enclos 4 </option>
+                <option value="1"> Ajouter enclos 5 </option>
+                <option value="1"> Ajouter enclos 6 </option>
+            </select>
+            <button type="submit">Valider</button>
+            </form> -->

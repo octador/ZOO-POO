@@ -1,5 +1,8 @@
 <?php
 
+spl_autoload_register(function ($class) {
+    include 'class/' . $class . '.php';
+});
 class Enclos
 {
     protected int $limitNumberOfAnimals = 6;
@@ -18,7 +21,7 @@ class Enclos
 
     /**
      * Get the value of numberOfAnimals
-     */ 
+     */
     public function getNumberOfAnimals()
     {
         return $this->numberOfAnimals;
@@ -28,7 +31,7 @@ class Enclos
      * Set the value of numberOfAnimals
      *
      * @return  self
-     */ 
+     */
     public function setNumberOfAnimals($numberOfAnimals)
     {
         $this->numberOfAnimals = $numberOfAnimals;
@@ -38,7 +41,7 @@ class Enclos
 
     /**
      * Get the value of cleanLiness
-     */ 
+     */
     public function getCleanLiness()
     {
         return $this->cleanLiness;
@@ -48,7 +51,7 @@ class Enclos
      * Set the value of cleanLiness
      *
      * @return  self
-     */ 
+     */
     public function setCleanLiness($cleanLiness)
     {
         $this->cleanLiness = $cleanLiness;
@@ -58,7 +61,7 @@ class Enclos
 
     /**
      * Get the value of enclosureName
-     */ 
+     */
     public function getEnclosureName()
     {
         return $this->enclosureName;
@@ -68,7 +71,7 @@ class Enclos
      * Set the value of enclosureName
      *
      * @return  self
-     */ 
+     */
     public function setEnclosureName($enclosureName)
     {
         $this->enclosureName = $enclosureName;
@@ -78,7 +81,7 @@ class Enclos
 
     /**
      * Get the value of enclosureType
-     */ 
+     */
     public function getEnclosureType()
     {
         return $this->enclosureType;
@@ -88,7 +91,7 @@ class Enclos
      * Set the value of enclosureType
      *
      * @return  self
-     */ 
+     */
     public function setEnclosureType($enclosureType)
     {
         $this->enclosureType = $enclosureType;

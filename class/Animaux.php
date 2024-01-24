@@ -1,6 +1,8 @@
-
 <?php
 
+spl_autoload_register(function ($class) {
+    include 'class/' . $class . '.php';
+});
 abstract class Animaux
 {
     protected string $species_name;
