@@ -8,12 +8,12 @@ class Zoo
     protected string $nameZoo;
     protected $createdEmploy ;
     protected int $numberEnclosurMax = 10 ;
-    protected array $arrayEnclosur;
+    protected array $arrayEnclosur = ["afficher parm de l'enclos"];
 
-    public function __construct($nameZoo,  $createdEmploy)
+    public function __construct(string $nameZoo, array $data)
     {
         $this->nameZoo = $nameZoo;
-        // $this->createdEmploy = new Employ($createdEmploy);
+        $this->createdEmploy = new Employ($data['nameEmploy'], $data['ageEmploy'], $data['sexeEmploy']);
     }
 
     /**

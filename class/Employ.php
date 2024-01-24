@@ -7,7 +7,7 @@ spl_autoload_register(function ($class) {
 class Employ
 {
     protected string $nameEmploy;
-    protected int $ageEmploy;
+    protected string $ageEmploy;
     protected string $sexeEmploy;
 
     public function __construct($nameEmploy, $ageEmploy, $sexeEmploy)

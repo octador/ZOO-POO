@@ -2,11 +2,27 @@
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
-
-
+if (
+    isset($_POST['name-zoo']) && !empty($_POST['name-zoo']) &&
+    isset($_POST['name-employ']) && !empty($_POST['name-employ']) &&
+    isset($_POST['age-employ']) && !empty($_POST['age-employ']) &&
+    isset($_POST['sexe-employ']) && !empty($_POST['sexe-employ'])
+) {
 var_dump($_POST);
+    $nameZoo = $_POST['name-zoo'];
+    $arrayEmploy  = array(
+        'nameEmploy' => $_POST['name-employ'],
+        'ageEmploy' => $_POST['age-employ'],
+        'sexeEmploy' => $_POST['sexe-employ'],
+    );
 
-// $newZoo = new Zoo();
+    $newZoo = new Zoo($nameZoo,$arrayEmploy);
+var_dump($newZoo);
+}
+
+
+
+
 
 
 
@@ -42,7 +58,7 @@ var_dump($_POST);
 
                 <div>
                     <label for="age"> Donner un age a votre employer :</label>
-                    <input type="date" name="age" required>
+                    <input type="date" name="age-employ" required>
                 </div>
                 <div>
                     <select name="sexe-employ" id="sexe-employ" required>
