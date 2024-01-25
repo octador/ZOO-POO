@@ -1,7 +1,5 @@
 <?php
-spl_autoload_register(function ($class) {
-    include 'class/' . $class . '.php';
-});
+include_once("./utilis/autoload.php");
 if (
     isset($_POST['name-zoo']) && !empty($_POST['name-zoo']) &&
     isset($_POST['name-employ']) && !empty($_POST['name-employ']) &&
@@ -18,6 +16,9 @@ var_dump($_POST);
 
     $newZoo = new Zoo($nameZoo,$arrayEmploy);
 var_dump($newZoo);
+
+header("Location: ./Interface.php");
+
 }
 
 

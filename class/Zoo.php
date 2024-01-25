@@ -1,7 +1,5 @@
 <?php
-spl_autoload_register(function ($class) {
-    include 'class/' . $class . '.php';
-});
+include_once("./utilis/autoload.php");
 
 class Zoo
 {

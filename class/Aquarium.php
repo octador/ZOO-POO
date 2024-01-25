@@ -1,18 +1,17 @@
 <?php
 
-spl_autoload_register(function ($class) {
-    include 'class/' . $class . '.php';
-});
+include_once('./utilis/autoload.php');
+
 class Aquarium extends Enclos
 {
     protected array $fishAuthorization;
     protected bool $saltwater = true;
 
-    public function __construct($enclosureType, $enclosureName, $cleanliness, $numberOfAnimals, $fishAuthorization)
+    public function __construct($enclosureType, $enclosureName, $cleanliness, $numberOfAnimals)
     {
         parent::__construct($enclosureType, $enclosureName, $cleanliness, $numberOfAnimals);
 
-        $this->fishAuthorization = $fishAuthorization;
+       
     }
 
 

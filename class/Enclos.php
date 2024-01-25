@@ -1,22 +1,20 @@
 <?php
 
-spl_autoload_register(function ($class) {
-    include 'class/' . $class . '.php';
-});
+include_once("./utilis/autoload.php");
 class Enclos
 {
-    protected int $limitNumberOfAnimals = 6;
-    protected array $enclosureType;
+    protected int $limitNumberOfAnimals = 6 ;
+    protected string $enclosureType;
     protected string $enclosureName;
-    protected array $cleanLiness;
-    protected array $numberOfAnimals;
+    protected string $cleanLiness;
+    protected int $numberOfAnimals ;
 
-    public function __construct($enclosureType, $enclosureName, $cleanLiness, $numberOfAnimals)
+    public function __construct(array $data)
     {
-        $this->enclosureType = $enclosureType;
-        $this->enclosureName = $enclosureName;
-        $this->cleanLiness = $cleanLiness;
-        $this->numberOfAnimals = $numberOfAnimals;
+        $this->enclosureType = $data['enclosureType'];
+        $this->enclosureName = $data['enclosureName'];
+        $this->cleanLiness = $data['cleanLiness'];
+        $this->numberOfAnimals = $data['numberOfAnimals'];
     }
 
     /**
@@ -95,7 +93,5 @@ class Enclos
     public function setEnclosureType($enclosureType)
     {
         $this->enclosureType = $enclosureType;
-
-        return $this;
     }
 }
