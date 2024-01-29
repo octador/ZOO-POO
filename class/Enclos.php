@@ -1,8 +1,9 @@
 <?php
 
-include_once("./utilis/autoload.php");
+include_once("../utils/autoload.php");
+
 class Enclos
-{
+{   protected int $id;
     protected int $limitNumberOfAnimals = 6 ;
     protected string $enclosureType;
     protected string $enclosureName;

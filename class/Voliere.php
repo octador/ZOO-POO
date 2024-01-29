@@ -1,16 +1,14 @@
 <?php
 
-include_once('./utilis/autoload.php');
+include_once('../utils/autoload.php');
 
 class Voliere extends Enclos
 {
     protected array $aviaryAuthorization;
 
-    public function __construct($enclosureType, $enclosureName, $cleanliness, $numberOfAnimals)
+    public function __construct(array $data)
     {
-        parent::__construct($enclosureType, $enclosureName, $cleanliness, $numberOfAnimals);
-
-        
+        parent::__construct($data);
     }
 
     public function cleanTopEncosure()

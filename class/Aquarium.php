@@ -7,14 +7,10 @@ class Aquarium extends Enclos
     protected array $fishAuthorization;
     protected bool $saltwater = true;
 
-    public function __construct($enclosureType, $enclosureName, $cleanliness, $numberOfAnimals)
+    public function __construct(array $data)
     {
-        parent::__construct($enclosureType, $enclosureName, $cleanliness, $numberOfAnimals);
-
-       
+        parent::__construct($data);
     }
-
-
 
     /**
      * Get the value of fishAuthorization

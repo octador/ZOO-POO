@@ -1,43 +1,53 @@
 <?php
-include_once("./utilis/autoload.php");
+require_once('./utils/autoload.php');
+require_once('./utils/connexion_database.php');
+// require_once('./utils/connexion_database.php');
 if (
     isset($_POST['name-zoo']) && !empty($_POST['name-zoo']) &&
     isset($_POST['name-employ']) && !empty($_POST['name-employ']) &&
     isset($_POST['age-employ']) && !empty($_POST['age-employ']) &&
     isset($_POST['sexe-employ']) && !empty($_POST['sexe-employ'])
+
 ) {
-var_dump($_POST);
+    // var_dump($_POST);
     $nameZoo = $_POST['name-zoo'];
+
     $arrayEmploy  = array(
         'nameEmploy' => $_POST['name-employ'],
         'ageEmploy' => $_POST['age-employ'],
         'sexeEmploy' => $_POST['sexe-employ'],
     );
+  
 
-    $newZoo = new Zoo($nameZoo,$arrayEmploy);
-var_dump($newZoo);
+//     $_SESSION['resultEmploy'] = $arrayEmploy ;
 
-header("Location: ./Interface.php");
+//   var_dump( $_SESSION['resultEmploy']);
 
+    $newZooManagement = new ZooManagement($db);
+    $newZoo = new Zoo($nameZoo);
+    $newZooManagement->addZoo($newZoo);
+    $newEmployManager= new EmployManagement($db);
+    $newEmploy = new Employ($arrayEmploy);
+    $newEmployManager->addEmploy($newEmploy);
+
+    var_dump($nameZoo);
+
+ 
+    // echo $newZoo->getNameZoo();
+   
+    // var_dump($newZooManagement);
+   
 }
 
-
-
-
-
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
-    <title>ZOO</title>
+    <link rel="stylesheet" href="./utils/style.css">
+    <title>Document</title>
 </head>
 
 <body>
@@ -45,18 +55,16 @@ header("Location: ./Interface.php");
     <!-- created employ -->
     <div class="d-flex flex-column">
         <div>
-            <h3> Crée votre ZOO :</h3>
+            <h3> Créé votre ZOO :</h3>
             <form action="" method="post">
                 <div>
                     <label for="name-zoo"> Quel nom veux tu donner a ton zoo : </label>
                     <input type="text" name="name-zoo" required>
                 </div>
-
                 <div>
                     <label for="name"> Donner un nom a votre employer :</label>
                     <input type="text" name="name-employ" required>
                 </div>
-
                 <div>
                     <label for="age"> Donner un age a votre employer :</label>
                     <input type="date" name="age-employ" required>
@@ -71,38 +79,6 @@ header("Location: ./Interface.php");
             </form>
         </div>
     </div>
-
 </body>
 
 </html>
-
-<!-- <div>
-    <form action="" method="post">
-        <label for="pet-select">choisir un animal : </label>
-
-        <select name="pets" id="pet-select">
-            <option value="">--Please choose an option--</option>
-            <option value="tigre">Tigre</option>
-            <option value="ours">Ours</option>
-            <option value="poisson">poisson</option>
-            <option value="aigle">Aigle</option>
-        </select>
-</div> -->
-
-
-
-
-
-
-<!-- <label for="enclos-select"> Ajouter un enclos</label>
-            <select name="enclos" id="enclos-select">
-                <option value="">--Please choose an option--</option>
-                <option value="1"> Ajouter enclos 1 </option>
-                <option value="1"> Ajouter enclos 2 </option>
-                <option value="1"> Ajouter enclos 3 </option>
-                <option value="1"> Ajouter enclos 4 </option>
-                <option value="1"> Ajouter enclos 5 </option>
-                <option value="1"> Ajouter enclos 6 </option>
-            </select>
-            <button type="submit">Valider</button>
-            </form> -->

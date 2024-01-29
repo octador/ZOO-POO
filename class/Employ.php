@@ -1,20 +1,20 @@
 <?php
 
-include_once("./utilis/autoload.php");
+
 
 class Employ
 {
+    protected int $id;
     protected string $nameEmploy;
     protected string $ageEmploy;
     protected string $sexeEmploy;
 
-    public function __construct($nameEmploy, $ageEmploy, $sexeEmploy)
+    public function __construct(array $data)
     {
-        $this->nameEmploy = $nameEmploy;
-        $this->ageEmploy = $ageEmploy;
-        $this->sexeEmploy = $sexeEmploy;
+        $this->nameEmploy = $data['nameEmploy'];
+        $this->ageEmploy = $data['ageEmploy'];
+        $this->sexeEmploy = $data['sexeEmploy'];
     }
-
 
 
     /**
@@ -73,6 +73,26 @@ class Employ
     public function setSexeEmploy($sexeEmploy)
     {
         $this->sexeEmploy = $sexeEmploy;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
 
         return $this;
     }
