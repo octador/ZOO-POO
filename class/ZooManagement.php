@@ -51,8 +51,6 @@ class ZooManagement {
     } else {
 
         $_SESSION['idZoo'] = $existingZoo['id'];
-        // var_dump($_SESSION['idZoo']);
-
        header('Location: ./class/Interface.php?success=Mon compte existe déja et je suis connecté');
 
 }

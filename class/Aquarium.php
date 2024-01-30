@@ -1,7 +1,5 @@
 <?php
 
-include_once('./utilis/autoload.php');
-
 class Aquarium extends Enclos
 {
     protected array $fishAuthorization;

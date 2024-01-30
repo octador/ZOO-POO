@@ -20,10 +20,6 @@ class EmployManagement
         $resultEmploy = $request->fetch();
         
         $_SESSION['resultEmploy']= $resultEmploy;
-        var_dump($_SESSION['resultEmploy']);
- 
-
-
         return $resultEmploy;
     }
 

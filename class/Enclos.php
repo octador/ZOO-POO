@@ -1,9 +1,11 @@
 <?php
 
-include_once("../utils/autoload.php");
+
 
 class Enclos
-{   protected int $id;
+{  
+    protected int $id;
+    protected int $idZoo;
     protected int $limitNumberOfAnimals = 6 ;
     protected string $enclosureType;
     protected string $enclosureName;
@@ -94,5 +96,45 @@ class Enclos
     public function setEnclosureType($enclosureType)
     {
         $this->enclosureType = $enclosureType;
+    }
+
+    /**
+     * Get the value of idZoo
+     */ 
+    public function getIdZoo()
+    {
+        return $this->idZoo;
+    }
+
+    /**
+     * Set the value of idZoo
+     *
+     * @return  self
+     */ 
+    public function setIdZoo($idZoo)
+    {
+        $this->idZoo = $idZoo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 }
